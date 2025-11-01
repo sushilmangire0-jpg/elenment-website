@@ -1,0 +1,145 @@
+const elements = {
+  1: { name: "Hydrogen", symbol: "H", atomicMass: "1.008", group: "Non-metal", block: "s-block", configuration: "1s¹" },
+  2: { name: "Helium", symbol: "He", atomicMass: "4.0026", group: "Noble Gas", block: "s-block", configuration: "1s²" },
+  3: { name: "Lithium", symbol: "Li", atomicMass: "6.94", group: "Alkali Metal", block: "s-block", configuration: "[He] 2s¹" },
+  4: { name: "Beryllium", symbol: "Be", atomicMass: "9.0122", group: "Alkaline Earth Metal", block: "s-block", configuration: "[He] 2s²" },
+  5: { name: "Boron", symbol: "B", atomicMass: "10.81", group: "Metalloid", block: "p-block", configuration: "[He] 2s² 2p¹" },
+  6: { name: "Carbon", symbol: "C", atomicMass: "12.011", group: "Non-metal", block: "p-block", configuration: "[He] 2s² 2p²" },
+  7: { name: "Nitrogen", symbol: "N", atomicMass: "14.007", group: "Non-metal", block: "p-block", configuration: "[He] 2s² 2p³" },
+  8: { name: "Oxygen", symbol: "O", atomicMass: "15.999", group: "Non-metal", block: "p-block", configuration: "[He] 2s² 2p⁴" },
+  9: { name: "Fluorine", symbol: "F", atomicMass: "18.998", group: "Halogen", block: "p-block", configuration: "[He] 2s² 2p⁵" },
+  10: { name: "Neon", symbol: "Ne", atomicMass: "20.180", group: "Noble Gas", block: "p-block", configuration: "[He] 2s² 2p⁶" },
+  11: { name: "Sodium", symbol: "Na", atomicMass: "22.990", group: "Alkali Metal", block: "s-block", configuration: "[Ne] 3s¹" },
+  12: { name: "Magnesium", symbol: "Mg", atomicMass: "24.305", group: "Alkaline Earth Metal", block: "s-block", configuration: "[Ne] 3s²" },
+  13: { name: "Aluminium", symbol: "Al", atomicMass: "26.982", group: "Post-transition Metal", block: "p-block", configuration: "[Ne] 3s² 3p¹" },
+  14: { name: "Silicon", symbol: "Si", atomicMass: "28.085", group: "Metalloid", block: "p-block", configuration: "[Ne] 3s² 3p²" },
+  15: { name: "Phosphorus", symbol: "P", atomicMass: "30.974", group: "Non-metal", block: "p-block", configuration: "[Ne] 3s² 3p³" },
+  16: { name: "Sulfur", symbol: "S", atomicMass: "32.06", group: "Non-metal", block: "p-block", configuration: "[Ne] 3s² 3p⁴" },
+  17: { name: "Chlorine", symbol: "Cl", atomicMass: "35.45", group: "Halogen", block: "p-block", configuration: "[Ne] 3s² 3p⁵" },
+  18: { name: "Argon", symbol: "Ar", atomicMass: "39.948", group: "Noble Gas", block: "p-block", configuration: "[Ne] 3s² 3p⁶" },
+  19: { name: "Potassium", symbol: "K", atomicMass: "39.098", group: "Alkali Metal", block: "s-block", configuration: "[Ar] 4s¹" },
+  20: { name: "Calcium", symbol: "Ca", atomicMass: "40.078", group: "Alkaline Earth Metal", block: "s-block", configuration: "[Ar] 4s²" },
+  21: { name: "Scandium", symbol: "Sc", atomicMass: "44.9559", group: "Transition Metal", block: "d-block", configuration: "[Ar] 3d¹ 4s²" },
+  22: { name: "Titanium", symbol: "Ti", atomicMass: "47.867", group: "Transition Metal", block: "d-block", configuration: "[Ar] 3d² 4s²" },
+  23: { name: "Vanadium", symbol: "V", atomicMass: "50.9415", group: "Transition Metal", block: "d-block", configuration: "[Ar] 3d³ 4s²" },
+  24: { name: "Chromium", symbol: "Cr", atomicMass: "51.9961", group: "Transition Metal", block: "d-block", configuration: "[Ar] 3d⁵ 4s¹" },
+  25: { name: "Manganese", symbol: "Mn", atomicMass: "54.9380", group: "Transition Metal", block: "d-block", configuration: "[Ar] 3d⁵ 4s²" },
+  26: { name: "Iron", symbol: "Fe", atomicMass: "55.845", group: "Transition Metal", block: "d-block", configuration: "[Ar] 3d⁶ 4s²" },
+  27: { name: "Cobalt", symbol: "Co", atomicMass: "58.9332", group: "Transition Metal", block: "d-block", configuration: "[Ar] 3d⁷ 4s²" },
+  28: { name: "Nickel", symbol: "Ni", atomicMass: "58.6934", group: "Transition Metal", block: "d-block", configuration: "[Ar] 3d⁸ 4s²" },
+  29: { name: "Copper", symbol: "Cu", atomicMass: "63.546", group: "Transition Metal", block: "d-block", configuration: "[Ar] 3d¹⁰ 4s¹" },
+  30: { name: "Zinc", symbol: "Zn", atomicMass: "65.38", group: "Transition Metal", block: "d-block", configuration: "[Ar] 3d¹⁰ 4s²" },
+  31: { name: "Gallium", symbol: "Ga", atomicMass: "69.723", group: "Post-transition Metal", block: "p-block", configuration: "[Ar] 3d¹⁰ 4s² 4p¹" },
+  32: { name: "Germanium", symbol: "Ge", atomicMass: "72.630", group: "Metalloid", block: "p-block", configuration: "[Ar] 3d¹⁰ 4s² 4p²" },
+  33: { name: "Arsenic", symbol: "As", atomicMass: "74.9216", group: "Metalloid", block: "p-block", configuration: "[Ar] 3d¹⁰ 4s² 4p³" },
+  34: { name: "Selenium", symbol: "Se", atomicMass: "78.971", group: "Non-metal", block: "p-block", configuration: "[Ar] 3d¹⁰ 4s² 4p⁴" },
+  35: { name: "Bromine", symbol: "Br", atomicMass: "79.904", group: "Halogen", block: "p-block", configuration: "[Ar] 3d¹⁰ 4s² 4p⁵" },
+  36: { name: "Krypton", symbol: "Kr", atomicMass: "83.798", group: "Noble Gas", block: "p-block", configuration: "[Ar] 3d¹⁰ 4s² 4p⁶" },
+  37: { name: "Rubidium", symbol: "Rb", atomicMass: "85.4678", group: "Alkali Metal", block: "s-block", configuration: "[Kr] 5s¹" },
+  38: { name: "Strontium", symbol: "Sr", atomicMass: "87.62", group: "Alkaline Earth Metal", block: "s-block", configuration: "[Kr] 5s²" },
+  39: { name: "Yttrium", symbol: "Y", atomicMass: "88.9058", group: "Transition Metal", block: "d-block", configuration: "[Kr] 4d¹ 5s²" },
+  40: { name: "Zirconium", symbol: "Zr", atomicMass: "91.224", group: "Transition Metal", block: "d-block", configuration: "[Kr] 4d² 5s²" },
+  41: { name: "Niobium", symbol: "Nb", atomicMass: "92.9064", group: "Transition Metal", block: "d-block", configuration: "[Kr] 4d⁴ 5s¹" },
+  42: { name: "Molybdenum", symbol: "Mo", atomicMass: "95.95", group: "Transition Metal", block: "d-block", configuration: "[Kr] 4d⁵ 5s¹" },
+  43: { name: "Technetium", symbol: "Tc", atomicMass: "98", group: "Transition Metal", block: "d-block", configuration: "[Kr] 4d⁵ 5s²" },
+  44: { name: "Ruthenium", symbol: "Ru", atomicMass: "101.07", group: "Transition Metal", block: "d-block", configuration: "[Kr] 4d⁷ 5s¹" },
+  45: { name: "Rhodium", symbol: "Rh", atomicMass: "102.9055", group: "Transition Metal", block: "d-block", configuration: "[Kr] 4d⁸ 5s¹" },
+  46: { name: "Palladium", symbol: "Pd", atomicMass: "106.42", group: "Transition Metal", block: "d-block", configuration: "[Kr] 4d¹⁰" },
+  47: { name: "Silver", symbol: "Ag", atomicMass: "107.8682", group: "Transition Metal", block: "d-block", configuration: "[Kr] 4d¹⁰ 5s¹" },
+  48: { name: "Cadmium", symbol: "Cd", atomicMass: "112.414", group: "Transition Metal", block: "d-block", configuration: "[Kr] 4d¹⁰ 5s²" },
+  49: { name: "Indium", symbol: "In", atomicMass: "114.818", group: "Post-transition Metal", block: "p-block", configuration: "[Kr] 4d¹⁰ 5s² 5p¹" },
+  50: { name: "Tin", symbol: "Sn", atomicMass: "118.710", group: "Post-transition Metal", block: "p-block", configuration: "[Kr] 4d¹⁰ 5s² 5p²" },
+  51: { name: "Antimony", symbol: "Sb", atomicMass: "121.760", group: "Metalloid", block: "p-block", configuration: "[Kr] 4d¹⁰ 5s² 5p³" },
+  52: { name: "Tellurium", symbol: "Te", atomicMass: "127.60", group: "Metalloid", block: "p-block", configuration: "[Kr] 4d¹⁰ 5s² 5p⁴" },
+  53: { name: "Iodine", symbol: "I", atomicMass: "126.9045", group: "Halogen", block: "p-block", configuration: "[Kr] 4d¹⁰ 5s² 5p⁵" },
+  54: { name: "Xenon", symbol: "Xe", atomicMass: "131.293", group: "Noble Gas", block: "p-block", configuration: "[Kr] 4d¹⁰ 5s² 5p⁶" },
+  55: { name: "Cesium", symbol: "Cs", atomicMass: "132.9055", group: "Alkali Metal", block: "s-block", configuration: "[Xe] 6s¹" },
+  56: { name: "Barium", symbol: "Ba", atomicMass: "137.327", group: "Alkaline Earth Metal", block: "s-block", configuration: "[Xe] 6s²" },
+  57: { name: "Lanthanum", symbol: "La", atomicMass: "138.9055", group: "Lanthanide", block: "d-block", configuration: "[Xe] 5d¹ 6s²" },
+  58: { name: "Cerium", symbol: "Ce", atomicMass: "140.116", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f¹ 5d¹ 6s²" },
+  59: { name: "Praseodymium", symbol: "Pr", atomicMass: "140.9077", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f³ 6s²" },
+  60: { name: "Neodymium", symbol: "Nd", atomicMass: "144.242", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f⁴ 6s²" },
+  61: { name: "Promethium", symbol: "Pm", atomicMass: "145", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f⁵ 6s²" },
+  62: { name: "Samarium", symbol: "Sm", atomicMass: "150.36", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f⁶ 6s²" },
+  63: { name: "Europium", symbol: "Eu", atomicMass: "151.964", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f⁷ 6s²" },
+  64: { name: "Gadolinium", symbol: "Gd", atomicMass: "157.25", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f⁷ 5d¹ 6s²" },
+  65: { name: "Terbium", symbol: "Tb", atomicMass: "158.9254", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f⁹ 6s²" },
+  66: { name: "Dysprosium", symbol: "Dy", atomicMass: "162.500", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f¹⁰ 6s²" },
+  67: { name: "Holmium", symbol: "Ho", atomicMass: "164.9303", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f¹¹ 6s²" },
+  68: { name: "Erbium", symbol: "Er", atomicMass: "167.259", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f¹² 6s²" },
+  69: { name: "Thulium", symbol: "Tm", atomicMass: "168.9342", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f¹³ 6s²" },
+  70: { name: "Ytterbium", symbol: "Yb", atomicMass: "173.04", group: "Lanthanide", block: "f-block", configuration: "[Xe] 4f¹⁴ 6s²" },
+  71: { name: "Lutetium", symbol: "Lu", atomicMass: "174.9668", group: "Lanthanide", block: "d-block", configuration: "[Xe] 4f¹⁴ 5d¹ 6s²" },
+  72: { name: "Hafnium", symbol: "Hf", atomicMass: "178.49", group: "Transition Metal", block: "d-block", configuration: "[Xe] 4f¹⁴ 5d² 6s²" },
+  73: { name: "Tantalum", symbol: "Ta", atomicMass: "180.9479", group: "Transition Metal", block: "d-block", configuration: "[Xe] 4f¹⁴ 5d³ 6s²" },
+  74: { name: "Tungsten", symbol: "W", atomicMass: "183.84", group: "Transition Metal", block: "d-block", configuration: "[Xe] 4f¹⁴ 5d⁴ 6s²" },
+  75: { name: "Rhenium", symbol: "Re", atomicMass: "186.207", group: "Transition Metal", block: "d-block", configuration: "[Xe] 4f¹⁴ 5d⁵ 6s²" },
+  76: { name: "Osmium", symbol: "Os", atomicMass: "190.23", group: "Transition Metal", block: "d-block", configuration: "[Xe] 4f¹⁴ 5d⁶ 6s²" },
+  77: { name: "Iridium", symbol: "Ir", atomicMass: "192.217", group: "Transition Metal", block: "d-block", configuration: "[Xe] 4f¹⁴ 5d⁷ 6s²" },
+  78: { name: "Platinum", symbol: "Pt", atomicMass: "195.084", group: "Transition Metal", block: "d-block", configuration: "[Xe] 4f¹⁴ 5d⁹ 6s¹" },
+  79: { name: "Gold", symbol: "Au", atomicMass: "196.9665", group: "Transition Metal", block: "d-block", configuration: "[Xe] 4f¹⁴ 5d¹⁰ 6s¹" },
+  80: { name: "Mercury", symbol: "Hg", atomicMass: "200.592", group: "Transition Metal", block: "d-block", configuration: "[Xe] 4f¹⁴ 5d¹⁰ 6s²" },
+  81: { name: "Thallium", symbol: "Tl", atomicMass: "204.38", group: "Post-transition metal", block: "p-block", configuration: "[Xe] 4f14 5d10 6s2 6p1" },
+  82: { name: "Lead", symbol: "Pb", atomicMass: "207.2", group: "Post-transition metal", block: "p-block", configuration: "[Xe] 4f14 5d10 6s2 6p2" },
+  83: { name: "Bismuth", symbol: "Bi", atomicMass: "208.98040", group: "Post-transition metal", block: "p-block", configuration: "[Xe] 4f14 5d10 6s2 6p3" },
+  84: { name: "Polonium", symbol: "Po", atomicMass: "209", group: "Metalloid", block: "p-block", configuration: "[Xe] 4f14 5d10 6s2 6p4" },
+  85: { name: "Astatine", symbol: "At", atomicMass: "210", group: "Halogen", block: "p-block", configuration: "[Xe] 4f14 5d10 6s2 6p5" },
+  86: { name: "Radon", symbol: "Rn", atomicMass: "222", group: "Noble gas", block: "p-block", configuration: "[Xe] 4f14 5d10 6s2 6p6" },
+  87: { name: "Francium", symbol: "Fr", atomicMass: "223", group: "Alkali metal", block: "s-block", configuration: "[Rn] 7s1" },
+  88: { name: "Radium", symbol: "Ra", atomicMass: "226", group: "Alkaline earth metal", block: "s-block", configuration: "[Rn] 7s2" },
+  89: { name: "Actinium", symbol: "Ac", atomicMass: "227", group: "Actinide", block: "f-block", configuration: "[Rn] 6d1 7s2" },
+  90: { name: "Thorium", symbol: "Th", atomicMass: "232.0377", group: "Actinide", block: "f-block", configuration: "[Rn] 6d2 7s2" },
+  91: { name: "Protactinium", symbol: "Pa", atomicMass: "231.03588", group: "Actinide", block: "f-block", configuration: "[Rn] 5f2 6d1 7s2" },
+  92: { name: "Uranium", symbol: "U", atomicMass: "238.02891", group: "Actinide", block: "f-block", configuration: "[Rn] 5f3 6d1 7s2" },
+  93: { name: "Neptunium", symbol: "Np", atomicMass: "237", group: "Actinide", block: "f-block", configuration: "[Rn] 5f4 6d1 7s2" },
+  94: { name: "Plutonium", symbol: "Pu", atomicMass: "244", group: "Actinide", block: "f-block", configuration: "[Rn] 5f6 7s2" },
+  95: { name: "Americium", symbol: "Am", atomicMass: "243", group: "Actinide", block: "f-block", configuration: "[Rn] 5f7 7s2" },
+  96: { name: "Curium", symbol: "Cm", atomicMass: "247", group: "Actinide", block: "f-block", configuration: "[Rn] 5f7 6d1 7s2" },
+  97: { name: "Berkelium", symbol: "Bk", atomicMass: "247", group: "Actinide", block: "f-block", configuration: "[Rn] 5f9 7s2" },
+  98: { name: "Californium", symbol: "Cf", atomicMass: "251", group: "Actinide", block: "f-block", configuration: "[Rn] 5f10 7s2" },
+  99: { name: "Einsteinium", symbol: "Es", atomicMass: "252", group: "Actinide", block: "f-block", configuration: "[Rn] 5f11 7s2" },
+  100: { name: "Fermium", symbol: "Fm", atomicMass: "257", group: "Actinide", block: "f-block", configuration: "[Rn] 5f12 7s2" },
+  101: { name: "Mendelevium", symbol: "Md", atomicMass: "258", group: "Actinide", block: "f-block", configuration: "[Rn] 5f13 7s2" },
+  102: { name: "Nobelium", symbol: "No", atomicMass: "259", group: "Actinide", block: "f-block", configuration: "[Rn] 5f14 7s2" },
+  103: { name: "Lawrencium", symbol: "Lr", atomicMass: "262", group: "Actinide", block: "d-block", configuration: "[Rn] 5f14 7s2 7p1" },
+  104: { name: "Rutherfordium", symbol: "Rf", atomicMass: "267", group: "Transition metal", block: "d-block", configuration: "[Rn] 5f14 6d2 7s2" },
+  105: { name: "Dubnium", symbol: "Db", atomicMass: "270", group: "Transition metal", block: "d-block", configuration: "[Rn] 5f14 6d3 7s2" },
+  106: { name: "Seaborgium", symbol: "Sg", atomicMass: "271", group: "Transition metal", block: "d-block", configuration: "[Rn] 5f14 6d4 7s2" },
+  107: { name: "Bohrium", symbol: "Bh", atomicMass: "270", group: "Transition metal", block: "d-block", configuration: "[Rn] 5f14 6d5 7s2" },
+  108: { name: "Hassium", symbol: "Hs", atomicMass: "277", group: "Transition metal", block: "d-block", configuration: "[Rn] 5f14 6d6 7s2" },
+  109: { name: "Meitnerium", symbol: "Mt", atomicMass: "278", group: "Transition metal", block: "d-block", configuration: "[Rn] 5f14 6d7 7s2" },
+  110: { name: "Darmstadtium", symbol: "Ds", atomicMass: "281", group: "Transition metal", block: "d-block", configuration: "[Rn] 5f14 6d9 7s1" },
+  111: { name: "Roentgenium", symbol: "Rg", atomicMass: "282", group: "Transition metal", block: "d-block", configuration: "[Rn] 5f14 6d10 7s1" },
+  112: { name: "Copernicium", symbol: "Cn", atomicMass: "285", group: "Transition metal", block: "d-block", configuration: "[Rn] 5f14 6d10 7s2" },
+  113: { name: "Nihonium", symbol: "Nh", atomicMass: "286", group: "Post-transition metal", block: "p-block", configuration: "[Rn] 5f14 6d10 7s2 7p1" },
+  114: { name: "Flerovium", symbol: "Fl", atomicMass: "289", group: "Post-transition metal", block: "p-block", configuration: "[Rn] 5f14 6d10 7s2 7p2" },
+  115: { name: "Moscovium", symbol: "Mc", atomicMass: "290", group: "Post-transition metal", block: "p-block", configuration: "[Rn] 5f14 6d10 7s2 7p3" },
+  116: { name: "Livermorium", symbol: "Lv", atomicMass: "293", group: "Post-transition metal", block: "p-block", configuration: "[Rn] 5f14 6d10 7s2 7p4" },
+  117: { name: "Tennessine", symbol: "Ts", atomicMass: "294", group: "Halogen", block: "p-block", configuration: "[Rn] 5f14 6d10 7s2 7p5" },
+  118: { name: "Oganesson", symbol: "Og", atomicMass: "294", group: "Noble gas", block: "p-block", configuration: "[Rn] 5f14 6d10 7s2 7p6" }
+};
+
+function getElementInfo() {
+  const num = document.getElementById("atomicNumber").value.trim();
+  const resultDiv = document.getElementById("result");
+
+  resultDiv.style.opacity = 0;
+
+  setTimeout(() => {
+    if (elements[num]) {
+      const e = elements[num];
+      resultDiv.innerHTML = `
+        <h2>${e.name} (${e.symbol})</h2>
+        <p><strong>Atomic Number:</strong> ${num}</p>
+        <p><strong>Atomic Mass:</strong> ${e.atomicMass}</p>
+        <p><strong>Group:</strong> ${e.group}</p>
+        <p><strong>Block:</strong> ${e.block}</p>
+        <p><strong>Electronic Configuration:</strong> ${e.configuration}</p>
+      `;
+    } else {
+      resultDiv.innerHTML = `<p style="color:#ff6b6b;">No element found for atomic number ${num}.</p>`;
+    }
+
+    resultDiv.style.opacity = 1;
+  }, 300);
+}

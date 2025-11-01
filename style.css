@@ -1,0 +1,114 @@
+/* Background Gradient */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #141E30, #243B55);
+  color: white;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*  Main Container */
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  width: 400px;
+  transition: 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.6);
+}
+
+/*  Title */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #00e0ff;
+  letter-spacing: 1px;
+}
+
+/* input ka box*/
+input {
+  width: 70%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/*button ka background*/
+button {
+  background-color: #00e0ff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #00aaff;
+}
+
+/* result ka box */
+#result {
+  margin-top: 25px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* college ka naam*/
+.corner-tag {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: linear-gradient(45deg, #ff6b6b, #f9ca24, #00e0ff, #9b59b6);
+  background-size: 300% 300%;
+  color: white;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 10px;
+  animation: gradientMove 4s infinite;
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+/* college ke naam ko animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+#result {
+  margin-top: 25px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.3);
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+#result p {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 6px 0;
+  padding: 8px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+#result p:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
